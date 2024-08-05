@@ -10,7 +10,7 @@ I also created the keypair and then launched the instance. From there, I created
 Now I needed to SSH into my instance so I could establish the instance as a server to then load up my webpage. After updating the instance cli, I downloaded python, boto3, flask, aws cli, as well as the s3 mount software onto the instance. 
 The s3 mount software was necessary to transfer the files in my s3 bucket to a directory in the instance. 
 
-  aws s3 cp s3://your-bucket-name/path/to/server.py s3mount/ #this is the code I used to mount my s3 files into a directory. Replace the "your-bucket-name" with my bucket name which was sm-morshed-website. 
+  mount-s3 bucket-name s3mount/ #this is the code I used to mount my s3 files into a directory. Replace the "your-bucket-name" with my bucket name which was sm-morshed-website. 
 
 I then cd s3mount and did python3 server.py and it created a server. From there I took the public address given to the instance and added :5000 to the end of it and I was able to load up my website through an EC2 instance with an S3 bucket connected to it. 
 
